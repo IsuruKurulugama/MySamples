@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "katty",
+      "lastName": "jane",
+      "dateOfBirth": {
+        "year": 2008,
+        "month": 1,
+        "day": 9
+      },
+      "gender": 2,
+      "country": "3",
+      "city": "3"
+    },
+    {
+      "id": 3,
+      "firstName": "jonny",
+      "lastName": "jay",
+      "dateOfBirth": {
+        "year": 1998,
+        "month": 10,
+        "day": 11
+      },
+      "gender": 1,
+      "isEmployeed": true,
+      "city": "2",
+      "country": "2"
+    }
+  ]
+}

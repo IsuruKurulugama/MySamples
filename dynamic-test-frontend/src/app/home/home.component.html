@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3 class="text-center text-primary">
+      Dynamic Form Test App
+    </h3>
+    <button type="button" class="btn btn-primary float-right" (click)="addUser()">
+      <i class="fa fa-plus"></i> Add
+    </button>
+    <table class="table table-borderless">
+      <tbody>
+        <tr *ngFor="let item of userList; let i = index">
+          <td>
+          </td>
+          <td class="width-12">
+            <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="item.firstName" >
+          </td>
+          <td  class="width-12">
+            <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="item.lastName" >
+          </td>
+          <td>
+              <form class="form-inline">
+                  <div class="form-group">
+                    <div class="input-group">
+                      <input class="form-control" placeholder="Date of Birth"
+                             name="dp" [(ngModel)]="item.dateOfBirth" [minDate]="{year: 1900, month: 1, day: 1}" ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" name="gender+{{i}}" [value]="1" [(ngModel)]="item.gender"> Male</label>
+            </div>
+          </td>
+          <td>
+            <div class="radio">
+              <label><input type="radio" name="gender+{{i}}" [value]="2" [(ngModel)]="item.gender"> Female</label>
+            </div>
+          </td>
+          <td>
+            <div class="checkbox">
+              <label><input type="checkbox" value="" [(ngModel)]="item.isEmployeed"> Employed</label>
+            </div>
+          </td>
+          <td>
+            <select class="form-control" id="city" aria-placeholder="City" [(ngModel)]="item.city">
+              <option value="1">Colombo</option>
+              <option value="2">Melbourn</option>
+              <option value="3">Basel</option>
+            </select>
+          </td>
+          <td>
+            <select class="form-control" id="country" aria-placeholder="Country" [(ngModel)]="item.country">
+              <option value="1">Sri Lanka</option>
+              <option value="2">Australia</option>
+              <option value="3">Switzerland </option>
+            </select>
+          </td>
+          <td>
+            <button type="button" class="btn btn-success" (click)="saveUser(item)">
+              <i class="fa fa-save"></i>
+            </button>
+          </td>
+          <td>
+              <button type="button" class="btn btn-danger" (click)="deleteUser(item)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
